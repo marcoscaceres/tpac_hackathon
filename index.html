@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Web Application Manifest</title>
+
+        <meta name="color-scheme" content="light" />
+        <link
+            rel="stylesheet"
+            href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"
+        />
+    </head>
+    <style>
+        h1 {
+            margin: 0;
+        }
+        p.logos {
+            margin: 0;
+        }
+        header {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-bottom: 1em;
+        }
+
+        #title_and_logo {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            justify-content: space-between;
+            align-items: start;
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+
+        #contributing {
+            grid-column: 1 / -1;
+            margin-top: 1em;
+        }
+
+        .title-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-section h1 {
+            margin-bottom: 0.25em;
+        }
+
+        .publication-date {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        #contributing ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0;
+            padding: 0.5em 0;
+            border-top: 1px solid #ddd;
+        }
+        #contributing ul li {
+            margin: 0;
+            flex: 1;
+            text-align: center;
+        }
+        #contributing ul li a {
+            text-decoration: none;
+            color: #005a9c;
+            padding: 0.25em 0.5em;
+            border-radius: 3px;
+            transition: background-color 0.2s ease;
+            display: block;
+        }
+        #contributing ul li a:hover {
+            background-color: #f0f0f0;
+        }
+        .spec-links {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            gap: 1em;
+            margin: 0;
+            padding: 0;
+        }
+        .spec-links li {
+            margin-right: 0;
+        }
+        .spec-links a {
+            text-decoration: none;
+            color: #005a9c;
+            padding: 0.25em 0.5em;
+            border-radius: 3px;
+            transition: background-color 0.2s ease;
+        }
+        .spec-links a:hover {
+            background-color: #f0f0f0;
+        }
+        .spec-links .status a {
+            font-weight: bold;
+        }
+    </style>
+    <body class="h-entry toc-sidebar">
+        <header class="head">
+            <div id="title_and_logo">
+                <div class="title-section">
+                    <h1 id="title" class="title">Web Application Manifest</h1>
+                    <p class="publication-date">
+                        <time class="dt-published" datetime="2025-09-03"
+                            >3 September 2025</time
+                        >
+                    </p>
+                </div>
+                <nav>
+                    <ul class="spec-links">
+                        <li class="status">
+                            <a href="https://www.w3.org/standards/types#WD"
+                                >Working Draft</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://www.w3.org/TR/appmanifest/"
+                                >Latest</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://w3c.github.io/manifest/">Draft</a>
+                        </li>
+                        <li>
+                            <a
+                                href="https://www.w3.org/standards/history/appmanifest/"
+                                >History</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+                <p class="logos">
+                    <a href="https://www.w3.org/"
+                        ><img
+                            crossorigin=""
+                            alt="W3C"
+                            height="48"
+                            src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C"
+                            width="72"
+                        />
+                    </a>
+                </p>
+                <nav id="contributing">
+                    <ul>
+                        <li><a href="#">Issues</a></li>
+                        <li><a href="#">Pull Requests</a></li>
+                        <li><a href="#">Repository</a></li>
+                        <li><a href="#">Web Apps WG</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <style>
+                #editors {
+                    margin-bottom: 1em;
+                }
+                .tab-container {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .tab-buttons {
+                    display: flex;
+                    border-bottom: 2px solid #ddd;
+                }
+                .tab-button {
+                    background: none;
+                    border: none;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    color: #666;
+                    border-bottom: 2px solid transparent;
+                    transition: all 0.3s ease;
+                }
+                .tab-button:hover {
+                    background-color: #f5f5f5;
+                    color: #005a9c;
+                }
+                .tab-button.active {
+                    color: #005a9c;
+                    border-bottom-color: #005a9c;
+                    background-color: #f9f9f9;
+                }
+                .tab-content {
+                    padding: 15px 0;
+                    min-height: 60px;
+                }
+                .tab-panel {
+                    display: none;
+                }
+                .tab-panel.active {
+                    display: block;
+                }
+                .editor-list {
+                    display: flex;
+                    gap: 1em;
+                    flex-wrap: wrap;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+                .editor-list li {
+                    margin: 0;
+                    padding: 5px 10px;
+
+                    border-radius: 4px;
+                    font-size: 0.9em;
+                }
+            </style>
+            <nav id="editors">
+                <div class="tab-container">
+                    <div class="tab-buttons">
+                        <button
+                            class="tab-button active"
+                            data-tab="current-editors"
+                        >
+                            Editors
+                        </button>
+                        <button class="tab-button" data-tab="former-editors">
+                            Former Editors
+                        </button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="current-editors" class="tab-panel active">
+                            <ul class="editor-list">
+                                <li>Marcos Cáceres</li>
+                                <li>Kenneth Rohde Christiansen</li>
+                                <li>Diego González</li>
+                                <li>Daniel Murphy</li>
+                                <li>Christian Liebel</li>
+                            </ul>
+                        </div>
+                        <div id="former-editors" class="tab-panel">
+                            <ul class="editor-list">
+                                <li>Matt Giuca</li>
+                                <li>Anssi Kostiainen</li>
+                                <li>Aaron Gustafson</li>
+                                <li>Mounir Lamouri</li>
+                                <li>Rob Dolin</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tabButtons = document.querySelectorAll(".tab-button");
+                const tabPanels = document.querySelectorAll(".tab-panel");
+
+                tabButtons.forEach((button) => {
+                    button.addEventListener("click", function () {
+                        const targetTab = this.getAttribute("data-tab");
+
+                        // Remove active class from all buttons and panels
+                        tabButtons.forEach((btn) =>
+                            btn.classList.remove("active")
+                        );
+                        tabPanels.forEach((panel) =>
+                            panel.classList.remove("active")
+                        );
+
+                        // Add active class to clicked button and corresponding panel
+                        this.classList.add("active");
+                        document
+                            .getElementById(targetTab)
+                            .classList.add("active");
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
